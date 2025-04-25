@@ -27,7 +27,7 @@ const InputData = ({ inputDiv, setInputDiv, uapUdateData = { id: "", title: "", 
             alert("All fields are required");
         } else {
             try {
-                await axios.post("http://localhost:1000/api/v2/create-task", data, { headers });
+                await axios.post(`${process.env.REACT_APP_API}/api/v2/create-task`, data, { headers });
                 setData({ title: "", desc: "" });
                 setInputDiv("hidden");
             } catch (error) {
@@ -41,7 +41,7 @@ const InputData = ({ inputDiv, setInputDiv, uapUdateData = { id: "", title: "", 
             alert("All fields are required");
         } else {
             try {
-                await axios.put(`http://localhost:1000/api/v2/update-tasks/${uapUdateData.id}`, data, { headers });
+                await axios.put(`${process.env.REACT_APP_API}/api/v2/update-tasks/${uapUdateData.id}`, data, { headers });
                 setUpdateData({ id: "", title: "", desc: "" });
                 setData({ title: "", desc: "" });
                 setInputDiv("hidden");

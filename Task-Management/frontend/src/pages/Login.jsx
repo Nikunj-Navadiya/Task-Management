@@ -24,7 +24,7 @@ const Login = () => {
                 alert("All Fields Are Required");
             } else {
                 const response = await axios.post(
-                    "http://localhost:1000/api/v1/log-in",
+                    `${process.env.REACT_APP_API}/api/v1/log-in`,
                     data
                 );
                 setData({ username: "", password: "" });

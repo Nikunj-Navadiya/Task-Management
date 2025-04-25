@@ -16,7 +16,7 @@ const Alltasks = () => {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const response = await axios.get("http://localhost:1000/api/v2/get-all-tasks", { headers });
+                const response = await axios.get(`${process.env.REACT_APP_API}/api/v2/get-all-tasks`, { headers });
                 setData(response.data.data); // Safely handle tasks array
             } catch (error) {
                 console.error("Error fetching tasks:", error);

@@ -10,7 +10,7 @@ const Completedtasks = () => {
   
     useEffect(() => {
       const fetch = async () => {
-          const response = await axios.get("http://localhost:1000/api/v2/get-complete-tasks", { headers });
+          const response = await axios.get(`${process.env.REACT_APP_API}/api/v2/get-complete-tasks`, { headers });
           setData(response.data.data);
         }
       fetch();

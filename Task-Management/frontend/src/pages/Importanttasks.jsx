@@ -13,7 +13,7 @@ const Importanttasks = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:1000/api/v2/get-important-tasks", { headers });
+        const response = await axios.get(`${process.env.REACT_APP_API}/api/v2/get-important-tasks`, { headers });
         setData(response.data.data);
       } catch (err) {
         setError(err.message);

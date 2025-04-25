@@ -10,7 +10,7 @@ const Incompletedtasks = () => {
   
     useEffect(() => {
       const fetch = async () => {
-          const response = await axios.get("http://localhost:1000/api/v2/get-incomplete-tasks", { headers });
+          const response = await axios.get(`${process.env.REACT_APP_API}/api/v2/get-incomplete-tasks`, { headers });
           setData(response.data.data);
         }
       fetch();

@@ -13,7 +13,7 @@ const Cards = ({ home, setInputDiv, data, setUpdateData }) => {
 
     const handleCompleteTasks = async (id) => {
         try {
-            await axios.put(`http://localhost:1000/api/v2/update-complete-tasks/${id}`, {}, { headers });
+            await axios.put(`${process.env.REACT_APP_API}/api/v2/update-complete-tasks/${id}`, {}, { headers });
         } catch (error) {
             console.log(error);
         }
@@ -22,7 +22,7 @@ const Cards = ({ home, setInputDiv, data, setUpdateData }) => {
 
     const importe = async (id) => {
         try {
-            await axios.put(`http://localhost:1000/api/v2/update-imp-tasks/${id}`, {}, { headers });
+            await axios.put(`${process.env.REACT_APP_API}/api/v2/update-imp-tasks/${id}`, {}, { headers });
         } catch (error) {
             console.log(error);
         }
@@ -31,7 +31,7 @@ const Cards = ({ home, setInputDiv, data, setUpdateData }) => {
 
     const deleteTask = async (id) => {
         try {
-            await axios.delete(`http://localhost:1000/api/v2/delete-tasks/${id}`, { headers });
+            await axios.delete(`${process.env.REACT_APP_API}/api/v2/delete-tasks/${id}`, { headers });
         } catch (error) {
             console.log(error);
         }

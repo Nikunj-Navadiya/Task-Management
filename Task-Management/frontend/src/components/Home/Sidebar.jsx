@@ -54,7 +54,7 @@ const Sidebar = () => {
         if (token) {
             const fetch = async () => {
                 try {
-                    const response = await axios.get("http://localhost:1000/api/v2/get-all-tasks", {
+                    const response = await axios.get(`${process.env.REACT_APP_API}/api/v2/get-all-tasks`, {
                         headers: {
                             id: localStorage.getItem("id"),
                         },
